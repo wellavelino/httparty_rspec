@@ -11,13 +11,14 @@ jobs:
 
       - run:
           name: install dependencies
-          command: |
+          command:
+            gem install bundler
             bundle install
 
       # run tests!
       - run:
           name: run tests
-          command: |
+          command: 
 
             bundle exec rake spec
 
