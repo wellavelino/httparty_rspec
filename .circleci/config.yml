@@ -1,4 +1,3 @@
-
 # Ruby CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
@@ -8,20 +7,17 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1
-
+    steps:
       - run:
           name: install dependencies
           command:
             gem install bundler
             bundle install
-
       # run tests!
       - run:
           name: run tests
-          command: 
-
+          command:
             bundle exec rake spec
-
       # collect reports
       - store_test_results:
           path: /tmp/test-results
