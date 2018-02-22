@@ -1,0 +1,16 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+machine:
+  ruby:
+    version: 2.3.0
+
+dependencies:
+  override:
+    - gem install bundler
+    - bundle install
+
+test:
+  override:
+    - bundle exec rake spec
