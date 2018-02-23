@@ -19,11 +19,11 @@ RSpec.describe 'Little example of api testing using httparty and rspec' do
     expect(response.code).to eql(401)
   end
 
-  # it 'Should return 404 when send a invalid movie' do
-  #   response = HttParty.get("?y=2016&apikey=#{API_KEY}")
-  #   puts response.code
-  #   puts response.parsed_response
-  #   expect(response[0]).to eql('{"Response":"False","Error":"Movie not found!"}')
-  # end
+  it 'Should return 404 when send a invalid movie' do
+    response = HttParty.get("?y=2016&apikey=#{API_KEY}")
+    puts response.code
+    puts response.parsed_response
+    expect(response[0]).to eql('{"Response":"False","Error":"Movie not found!"}')
+  end
 end
 
